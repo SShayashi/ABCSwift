@@ -1,0 +1,9 @@
+name: ABCSwift
+targets:
+  ABCSwift:
+    type: tool
+    platform: macOS
+    sources:
+      - ABCSwift
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.sshayashi.ABCSwift
