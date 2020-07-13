@@ -18,31 +18,31 @@ func D() {
         return cnt
     }
     
-    var total = 0.0
-    for i in 0..<N{
-        total += Double(R[i])! * pow(2, i.toD())
+    var total = 0
+    var baseCnt = X.count(n: "1")
+    for i in 1...N {
+        total = (total + (2 << i)) % (baseCnt+1)
     }
     
-    var baseCnt = X.count(n: "1")
     
     for i in 0..<N{
         dp[i] = popcount(n: i)
     }
     for i in 0..<N{
         if X[i] == "1" {
-            let a = total - pow(2.0, (N-1-i).toD())
+            let a = total - pow(2.0, (N-1-i).toD()).toI()
             let b = baseCnt - 1
             if b == 0 {
                 print(0)
                 continue
             }
-            let c = a.toI() % b
+            let c = a % b
             print(dp[c] + 1)
             continue
         }
         
-        let x = total + pow(2, (N-1-i).toD())
-        let y = x.toI() % (baseCnt+1)
+        let x = total + pow(2, (N-1-i).toD()).toI()
+        let y = x % (baseCnt+1)
         print(dp[y] + 1)
     }
 }
