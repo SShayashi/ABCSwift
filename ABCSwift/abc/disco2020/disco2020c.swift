@@ -15,8 +15,17 @@ func disco2020c() -> [[String]]{
     var yLists:[[Int]] = []
     var list:[Int] = []
 
-
+    var i = 0
     for y in 0..<H{
+        if G[y].contains("#"){
+            list.append(y)
+            i = y+1
+            break
+        }
+        list.append(y)
+    }
+    
+    for y in i..<H{
         if G[y].contains("#"){
             list.append(y)
             yLists.append(list)
@@ -41,7 +50,18 @@ func disco2020c() -> [[String]]{
         var xLists:[[Int]] = []
         var xlist:[Int] = []
         var isInStbX = false
+        
+        var i = 0
         for x in 0..<W{
+            if isInStrovery(yList, x){
+                xlist.append(x)
+                i = x+1
+                break
+            }
+            xlist.append(x)
+        }
+        
+        for x in i..<W{
             if isInStrovery(yList, x){
                 xlist.append(x)
                 xLists.append(xlist)
@@ -73,3 +93,4 @@ func disco2020c() -> [[String]]{
     
     return G
 }
+
