@@ -1,20 +1,14 @@
 
-func disco2020c() -> [[String]]{
+func disco2020c() {
     let HWK = readLine()!.toIntList()
     let H = HWK[0]
     let W = HWK[1]
     var K = HWK[2]
     var G:[[String]] = []
     var ANS:[[Int]] = Array(repeating: Array(repeating: 0, count: W), count: H)
-    for y in 1...H{
-        let x = readLine()!.toList()
-        G.append(x)
-    }
-    var isInStbY = false
-    var width:[Int] = []
+    for _ in 1...H{ G.append(readLine()!.toList())}
     var yLists:[[Int]] = []
     var list:[Int] = []
-
     var i = 0
     for y in 0..<H{
         if G[y].contains("#"){
@@ -24,20 +18,15 @@ func disco2020c() -> [[String]]{
         }
         list.append(y)
     }
-    
     for y in i..<H{
         if G[y].contains("#"){
-            list.append(y)
             yLists.append(list)
-            list = []
+            list = [y]
         }else{
             list.append(y)
         }
     }
-    if list.count > 0 {
-        yLists.append(list)
-    }
-    
+    if list.count > 0 { yLists.append(list)}
     func isInStrovery(_ yList:[Int],_ x:Int) -> Bool{
         for y in yList{
             if G[y][x].contains("#"){
@@ -46,35 +35,30 @@ func disco2020c() -> [[String]]{
         }
         return false
     }
-    for (index,yList) in yLists.enumerated(){
+    for yList in yLists{
         var xLists:[[Int]] = []
-        var xlist:[Int] = []
-        var isInStbX = false
-        
+        var xl:[Int] = []
         var i = 0
         for x in 0..<W{
             if isInStrovery(yList, x){
-                xlist.append(x)
+                xl.append(x)
                 i = x+1
                 break
             }
-            xlist.append(x)
+            xl.append(x)
         }
         
         for x in i..<W{
             if isInStrovery(yList, x){
-                xlist.append(x)
-                xLists.append(xlist)
-                xlist = []
+                xLists.append(xl)
+                xl = [x]
             }else{
-                xlist.append(x)
+                xl.append(x)
             }
         }
-        if xlist.count > 0 {xLists.append(xlist)}
-        
-        
-        for xlist in xLists{
-            for x in xlist{
+        if xl.count > 0 {xLists.append(xl)}
+        for xl in xLists{
+            for x in xl{
                 for y in yList{
                     ANS[y][x] = K
                 }
@@ -85,12 +69,8 @@ func disco2020c() -> [[String]]{
     
     for y in 0..<H{
         for x in 0..<W{
-            print(ANS[y][x],terminator: "")
+            print(ANS[y][x],terminator: " ")
         }
         print("")
     }
-    
-    
-    return G
 }
-
