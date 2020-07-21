@@ -1,4 +1,19 @@
 name: ABCSwift
+schemes:
+  ABCSwift:
+    build:
+      targets:
+        ABCSwift: run
+    run:
+      config:Debug
+    test:
+      config:Debug
+    profile:
+      config:Debug
+    analyze:
+      config:Debug
+    archive:
+      config:Debug
 targets:
   ABCSwift:
     type: tool
