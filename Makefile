@@ -10,13 +10,13 @@ abc:
 
 t = ""
 company:
-	mkdir -p ABCSwift/abc/$t$n/
-	touch ABCSwift/abc/$t$n/$t$na.swift
-	touch ABCSwift/abc/$t$n/$t$nb.swift
-	touch ABCSwift/abc/$t$n/$t$nc.swift
-	touch ABCSwift/abc/$t$n/$t$nd.swift
-	touch ABCSwift/abc/$t$n/$t$ne.swift
-	touch ABCSwift/abc/$t$n/$t$nf.swift
+	mkdir -p ABCSwift/company/$t$n/
+	touch ABCSwift/company/$t$n/$t$na.swift
+	touch ABCSwift/company/$t$n/$t$nb.swift
+	touch ABCSwift/company/$t$n/$t$nc.swift
+	touch ABCSwift/company/$t$n/$t$nd.swift
+	touch ABCSwift/company/$t$n/$t$ne.swift
+	touch ABCSwift/company/$t$n/$t$nf.swift
 
 gen:
 	xcodegen
