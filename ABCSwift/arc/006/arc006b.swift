@@ -1,14 +1,14 @@
 
 func arc006b() -> Int{
-    let NL = readLine()!.toIntList()
+    let NL = readLine()!.toSepIntList()
     var G:[[String]] = []
     for i in 0..<NL[1]{
-        var p = readLine()!.toList()
+        var p = readLine()!.toStrList()
         p.insert(" ", at: 0)
         p.append(" ")
         G.append(p)
     }
-    var O = readLine()!.toList()
+    var O = readLine()!.toStrList()
     O.insert(" ", at: 0)
     O.append(" ")
     

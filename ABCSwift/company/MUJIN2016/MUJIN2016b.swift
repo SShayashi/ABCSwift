@@ -1,6 +1,6 @@
 import Foundation
 func MUJIN2016b()->Double{
-    let OABC = readLine()!.toDoubleList()
+    let OABC = readLine()!.toSepDoubleList()
     let A = OABC[0]
     let B = OABC[1]
     let C = OABC[2]

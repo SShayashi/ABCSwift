@@ -11,7 +11,7 @@ func D() {
         var cnt = 0
         while result != 0 {
             let bin = result.toBin()
-            let count = bin.toList().count(n: "1")
+            let count = bin.toStrList().count(n: "1")
             result %= count
             cnt += 1
         }

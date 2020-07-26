@@ -1,12 +1,12 @@
 
 func disco2020c() {
-    let HWK = readLine()!.toIntList()
+    let HWK = readLine()!.toSepIntList()
     let H = HWK[0]
     let W = HWK[1]
     var K = HWK[2]
     var G:[[String]] = []
     var ANS:[[Int]] = Array(repeating: Array(repeating: 0, count: W), count: H)
-    for _ in 1...H{ G.append(readLine()!.toList())}
+    for _ in 1...H{ G.append(readLine()!.toStrList())}
     var yLists:[[Int]] = []
     var list:[Int] = []
     var i = 0

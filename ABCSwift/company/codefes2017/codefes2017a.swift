@@ -1,5 +1,5 @@
 func codefes2017a() -> String {
-    let NMK = readLine()!.toIntList()
+    let NMK = readLine()!.toSepIntList()
     let N = NMK[0]
     let M = NMK[1]
     let K = NMK[2]
