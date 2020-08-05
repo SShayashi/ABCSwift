@@ -1,5 +1,4 @@
-
-func e() -> Int {
+func abc174e() -> Int {
     let NK = readLine()!.toSepIntList()
     let N = NK[0]
     let K = NK[1]
